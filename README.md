@@ -1,4 +1,5 @@
 # good README generator
+![mit license](https://img.shields.io/github/license/jaha675/good-readme-gen?style=flat-square)
 ## Description
 
 A program for generating a readme file from the console.
