@@ -1,19 +1,19 @@
-# good README generator
+# ${response.title}
 ## Description
 
-A program for generating a readme file from the console.
+${response.description}
 
 ## Installation
 
-Requires inquirer to be installed
+${response.installNotes}
 
 ## Usage
 
-Used to make a quality readme file with minimal effort. Useful if you're like me and don't enjoy writing the formatting for a readme every time you make a new repo.
+${response.usage}
 
 ## Credits
 
-This was a solo endeavor.
+${response.colabs}
 
 ## License
 

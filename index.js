@@ -1,19 +1,48 @@
-# good README generator
+const fs = require('fs')
+const inquirer =require('inquirer')
+
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'Project title?',
+            name: 'title',
+        },{
+            type: 'input',
+            message: 'Describe the project',
+            name: 'description',
+        },{
+            type: 'input',
+            message: 'Installation instructions?',
+            name: 'installNotes',
+        },{
+            type: 'input',
+            message: 'Tell me what its used for',
+            name: 'usage',
+        },{
+            type: 'input',
+            message: 'Who colabd on this?',
+            name: 'colabs',
+        },
+    ])
+    .then((response)=>
+fs.writeFile('README.md', 
+`# ${response.title}
 ## Description
 
-A program for generating a readme file from the console.
+${response.description}
 
 ## Installation
 
-Requires inquirer to be installed
+${response.installNotes}
 
 ## Usage
 
-Used to make a quality readme file with minimal effort. Useful if you're like me and don't enjoy writing the formatting for a readme every time you make a new repo.
+${response.usage}
 
 ## Credits
 
-This was a solo endeavor.
+${response.colabs}
 
 ## License
 
@@ -26,3 +55,10 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
+`,
+(err) => err ? console.error(err) : console.log('Success!')
+)
+
+)
+
+
